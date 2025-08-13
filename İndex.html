@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Site - HTML + CSS + JS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background: #0b132b
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop')
+        center/cover fixed no-repeat;
+    }
+    header {
+      background: rgba(0,0,0,0.55);
+      position: sticky; top: 0;
+      backdrop-filter: blur(6px);
+    }
+    nav {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px;
+    }
+    .logo { font-weight: 700; letter-spacing: 0.5px; }
+    nav ul { list-style: none; display: flex; gap: 16px; margin: 0; padding: 0; }
+    nav a { color: #fff; text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+    nav a:hover { background: rgba(255,255,255,0.15); }
+    .button {
+      border: none; padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 600;
+    }
+    .button.primary { background: #00d1b2; color: #081c15; }
+    .button.primary:hover { filter: brightness(0.95); }
+    main { max-width: 1000px; margin: 48px auto; padding: 0 16px; text-align: center; }
+    .hero { padding: 56px 24px; background: rgba(0,0,0,0.45); border-radius: 16px; }
+    footer { text-align: center; padding: 24px; background: rgba(0,0,0,0.5); }
+
+    /* Karanlık tema */
+    .dark { background: #0f172a; color: #e5e7eb; }
+    .dark header { background: rgba(15,23,42,0.85); }
+    .dark nav a { color: #e5e7eb; }
+    .dark nav a:hover { background: rgba(255,255,255,0.08); }
+    .dark .hero, .dark footer { background: rgba(255,255,255,0.06); }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Akdeniz Tur</div>
+      <ul>
+        <li><a href="#">Ana Sayfa</a></li>
+        <li><a href="#">Hakkımızda</a></li>
+        <li><a href="#">Hizmetler</a></li>
+        <li><a href="#">İletişim</a></li>
+      </ul>
+      <button class="button primary" onclick="temaDegistir()">🐬</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hoş Geldin 👋</h1>
+      <p>En güzel tatil Akdeniz’de olur, Akdeniz Tur hizmetinizde.</p>
+      <!-- Butona tıklayınca başka site açılacak -->
+      <button class="button" onclick="siteAc()">Tur Rezervasyon Et</button>
+    </section>
+  </main>
+
+  <footer>© Site 2000-2025 – tüm hakları Akdeniz Tur’a aittir.</footer>
+
+  <script>
+    function siteAc() {
+      // Mevcut sayfa kapanır ve yeni site açılır
+      window.location.href = 'http://127.0.0.1:5500/Akdeniz%20Tur/index.html';
+    }
+
+    function temaDegistir() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
